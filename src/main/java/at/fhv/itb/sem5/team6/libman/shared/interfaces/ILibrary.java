@@ -1,9 +1,9 @@
 package at.fhv.itb.sem5.team6.libman.shared.interfaces;
 
-import at.fhv.itb.sem5.team6.libman.server.model.Availability;
-import at.fhv.itb.sem5.team6.libman.server.model.MediaType;
 import at.fhv.itb.sem5.team6.libman.shared.DTOs.immutable.ImmutableMedia;
 import at.fhv.itb.sem5.team6.libman.shared.DTOs.immutable.ImmutablePhysicalMedia;
+import at.fhv.itb.sem5.team6.libman.shared.enums.Availability;
+import at.fhv.itb.sem5.team6.libman.shared.enums.MediaType;
 
 import javax.validation.constraints.NotNull;
 import java.rmi.Remote;
