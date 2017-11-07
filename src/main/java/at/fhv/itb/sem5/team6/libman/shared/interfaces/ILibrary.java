@@ -1,7 +1,7 @@
 package at.fhv.itb.sem5.team6.libman.shared.interfaces;
 
-import at.fhv.itb.sem5.team6.libman.shared.DTOs.immutable.ImmutableMedia;
-import at.fhv.itb.sem5.team6.libman.shared.DTOs.immutable.ImmutablePhysicalMedia;
+import at.fhv.itb.sem5.team6.libman.shared.DTOs.MediaDTO;
+import at.fhv.itb.sem5.team6.libman.shared.DTOs.PhysicalMediaDTO;
 import at.fhv.itb.sem5.team6.libman.shared.enums.Availability;
 import at.fhv.itb.sem5.team6.libman.shared.enums.MediaType;
 
@@ -18,21 +18,21 @@ public interface ILibrary extends Remote {
     //ImmutableMedia findOneMedia(@NotNull Serializable id) throws RemoteException;
 
     // all
-    List<ImmutableMedia> findAllMedia() throws RemoteException;
+    List<MediaDTO> findAllMedia() throws RemoteException;
 
     // by text (like and ignorecase) over all properties
-    List<ImmutableMedia> findAllMedia(@NotNull String text) throws RemoteException;
+    List<MediaDTO> findAllMedia(@NotNull String text) throws RemoteException;
 
     // by type
-    List<ImmutableMedia> findAllMedia(@NotNull MediaType type) throws RemoteException;
+    List<MediaDTO> findAllMedia(@NotNull MediaType type) throws RemoteException;
 
     // by availability
-    List<ImmutableMedia> findAllMedia(@NotNull Availability availability) throws RemoteException;
+    List<MediaDTO> findAllMedia(@NotNull Availability availability) throws RemoteException;
 
     // by text (like and ignorecase) and media and availability
-    List<ImmutableMedia> findAllMedia(String text, MediaType type, Availability availability) throws RemoteException;
+    List<MediaDTO> findAllMedia(String text, MediaType type, Availability availability) throws RemoteException;
 
-    List<ImmutablePhysicalMedia> findAllPhysicalMedia() throws RemoteException;
+    List<PhysicalMediaDTO> findAllPhysicalMedia() throws RemoteException;
 
 // Reservation
 
@@ -51,5 +51,5 @@ public interface ILibrary extends Remote {
 
 // Physical Media
 
-    List<ImmutablePhysicalMedia> getPhysicalMedia(ImmutableMedia media) throws RemoteException;
+    List<PhysicalMediaDTO> getPhysicalMedia(MediaDTO media) throws RemoteException;
 }
