@@ -3,8 +3,6 @@ package at.fhv.itb.sem5.team6.libman.shared.DTOs;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
 
@@ -13,7 +11,7 @@ import java.io.Serializable;
 @Getter // enables getters
 @Setter // enables setters
 
-public class CustomerDTO implements Identifiable<String>, Serializable {
+public class CustomerDTO implements Serializable {
 
     private String id;
     private String firstName;
