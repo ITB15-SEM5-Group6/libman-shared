@@ -3,9 +3,6 @@ package at.fhv.itb.sem5.team6.libman.shared.DTOs;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
 import java.util.Date;
