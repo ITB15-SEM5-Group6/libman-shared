@@ -15,7 +15,7 @@ import java.util.Date;
 @Getter // enables getters
 @Setter // enables setters
 
-public class ReservationDTO implements Identifiable<String>, Serializable {
+public class ReservationDTO implements Serializable {
 
     private String id;
     private MediaDTO mediaDTO;

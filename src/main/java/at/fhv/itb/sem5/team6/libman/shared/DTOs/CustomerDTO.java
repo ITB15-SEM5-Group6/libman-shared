@@ -13,7 +13,7 @@ import java.io.Serializable;
 @Getter // enables getters
 @Setter // enables setters
 
-public class CustomerDTO implements Identifiable<String>, Serializable {
+public class CustomerDTO implements Serializable {
 
     private String id;
     private String firstName;

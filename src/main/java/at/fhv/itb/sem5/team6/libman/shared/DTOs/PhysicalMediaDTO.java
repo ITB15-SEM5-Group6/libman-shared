@@ -15,7 +15,7 @@ import java.io.Serializable;
 @Getter // enables getters
 @Setter // enables setters
 
-public class PhysicalMediaDTO implements Identifiable<String>, Serializable {
+public class PhysicalMediaDTO implements Serializable {
 
     private String id;
     private String index;
