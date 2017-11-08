@@ -3,6 +3,7 @@ package at.fhv.itb.sem5.team6.libman.shared.interfaces;
 import at.fhv.itb.sem5.team6.libman.shared.DTOs.MediaDTO;
 import at.fhv.itb.sem5.team6.libman.shared.DTOs.PhysicalMediaDTO;
 import at.fhv.itb.sem5.team6.libman.shared.enums.Availability;
+import at.fhv.itb.sem5.team6.libman.shared.enums.Genre;
 import at.fhv.itb.sem5.team6.libman.shared.enums.MediaType;
 
 import javax.validation.constraints.NotNull;
@@ -30,7 +31,7 @@ public interface ILibrary extends Remote {
     List<MediaDTO> findAllMedia(@NotNull Availability availability) throws RemoteException;
 
     // by text (like and ignorecase) and media and availability
-    List<MediaDTO> findAllMedia(String text, MediaType type, Availability availability) throws RemoteException;
+    List<MediaDTO> findAllMedia(String text, Genre genre, MediaType type, Availability availability) throws RemoteException;
 
     List<PhysicalMediaDTO> findAllPhysicalMedia() throws RemoteException;
 
