@@ -13,7 +13,7 @@ import java.util.Date;
 @Getter // enables getters
 @Setter // enables setters
 
-public class LendingDTO implements Identifiable<String>, Serializable {
+public class LendingDTO implements Serializable {
 
     private String id;
     private PhysicalMediaDTO physicalMediaDTO;

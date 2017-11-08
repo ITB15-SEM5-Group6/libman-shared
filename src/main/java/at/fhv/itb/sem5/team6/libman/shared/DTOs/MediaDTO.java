@@ -5,8 +5,6 @@ import at.fhv.itb.sem5.team6.libman.shared.enums.MediaType;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -16,7 +14,7 @@ import java.util.Date;
 @Getter // enables getters
 @Setter // enables setters
 
-public class MediaDTO implements Identifiable<String>, Serializable {
+public class MediaDTO implements Serializable {
 
     private String id;
     private String title;
@@ -26,5 +24,5 @@ public class MediaDTO implements Identifiable<String>, Serializable {
     private String publisher;
     private Date releaseDate;
     private String tags;
-    private Genre Genre;
+    private Genre genre;
 }
