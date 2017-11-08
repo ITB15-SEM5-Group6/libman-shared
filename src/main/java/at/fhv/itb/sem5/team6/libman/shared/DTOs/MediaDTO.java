@@ -1,5 +1,6 @@
 package at.fhv.itb.sem5.team6.libman.shared.DTOs;
 
+import at.fhv.itb.sem5.team6.libman.shared.enums.Genre;
 import at.fhv.itb.sem5.team6.libman.shared.enums.MediaType;
 import lombok.Data;
 import lombok.Getter;
@@ -25,5 +26,5 @@ public class MediaDTO implements Identifiable<String>, Serializable {
     private String publisher;
     private Date releaseDate;
     private String tags;
-    private String Genre;
+    private Genre Genre;
 }
