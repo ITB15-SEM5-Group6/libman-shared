@@ -14,23 +14,6 @@ import java.util.List;
 public interface ILibrary extends Remote {
 
 // Search
-
-    // by id
-    //ImmutableMedia findOneMedia(@NotNull Serializable id) throws RemoteException;
-
-    // all
-    List<MediaDTO> findAllMedia() throws RemoteException;
-
-    // by text (like and ignorecase) over all properties
-    List<MediaDTO> findAllMedia(@NotNull String text) throws RemoteException;
-
-    // by type
-    List<MediaDTO> findAllMedia(@NotNull MediaType type) throws RemoteException;
-
-    // by availability
-    List<MediaDTO> findAllMedia(@NotNull Availability availability) throws RemoteException;
-
-    // by text (like and ignorecase) and media and availability
     List<MediaDTO> findAllMedia(String text, Genre genre, MediaType type, Availability availability) throws RemoteException;
 
     List<PhysicalMediaDTO> findAllPhysicalMedia() throws RemoteException;
