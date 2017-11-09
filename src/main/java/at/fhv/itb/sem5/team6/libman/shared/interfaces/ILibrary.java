@@ -1,7 +1,6 @@
 package at.fhv.itb.sem5.team6.libman.shared.interfaces;
 
-import at.fhv.itb.sem5.team6.libman.shared.DTOs.MediaDTO;
-import at.fhv.itb.sem5.team6.libman.shared.DTOs.PhysicalMediaDTO;
+import at.fhv.itb.sem5.team6.libman.shared.DTOs.*;
 import at.fhv.itb.sem5.team6.libman.shared.enums.Availability;
 import at.fhv.itb.sem5.team6.libman.shared.enums.Genre;
 import at.fhv.itb.sem5.team6.libman.shared.enums.MediaType;
@@ -20,17 +19,17 @@ public interface ILibrary extends Remote {
 
 // Reservation
 
-    //Reservation reserveMedia(@NotNull Media media, @NotNull Customer customer) throws RemoteException;
+    ReservationDTO reserveMedia(@NotNull MediaDTO media, @NotNull CustomerDTO customer) throws RemoteException;
 
-    //void cancelReservation(@NotNull Reservation reservation) throws RemoteException;
+    void cancelReservation(@NotNull ReservationDTO reservation) throws RemoteException;
 
 // Lending
 
-    //Lending lendPhysicalMedia(@NotNull PhysicalMedia physicalMedia, @NotNull Customer customer) throws RemoteException;
+    LendingDTO lendPhysicalMedia(@NotNull PhysicalMediaDTO physicalMedia, @NotNull CustomerDTO customer) throws RemoteException;
 
-    //void returnPhysicalMedia(@NotNull Lending lending) throws RemoteException;
+    void returnPhysicalMedia(@NotNull PhysicalMediaDTO physicalMedia) throws RemoteException;
 
-    //void extendLending(@NotNull Lending lending) throws RemoteException;
+    void extendLending(@NotNull LendingDTO lending) throws RemoteException;
 
 
 // Physical Media
