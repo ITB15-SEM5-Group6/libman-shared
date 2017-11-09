@@ -17,5 +17,5 @@ public class PhysicalMediaDTO implements Serializable {
     private String id;
     private String index;
     private Availability availability;
-    private MediaDTO mediaDTO;
+    private MediaDTO media;
 }

@@ -15,8 +15,8 @@ import java.util.Date;
 public class ReservationDTO implements Serializable {
 
     private String id;
-    private MediaDTO mediaDTO;
-    private CustomerDTO customerDTO;
+    private MediaDTO media;
+    private CustomerDTO customer;
     private Date date;
 
 }

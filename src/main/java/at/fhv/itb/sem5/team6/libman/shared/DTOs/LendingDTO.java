@@ -16,10 +16,10 @@ import java.util.Date;
 public class LendingDTO implements Serializable {
 
     private String id;
-    private PhysicalMediaDTO physicalMediaDTO;
-    private CustomerDTO customerDTO;
+    private PhysicalMediaDTO physicalMedia;
+    private CustomerDTO customer;
     private Date lendDate;
-    private Integer extentions;
+    private Integer extensions;
     private String info;
     private LendingState state;
 

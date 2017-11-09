@@ -13,7 +13,6 @@ import java.util.Date;
 @Data // applies lombok-annotations
 @Getter // enables getters
 @Setter // enables setters
-
 public class MediaDTO implements Serializable {
 
     private String id;
