@@ -39,4 +39,6 @@ public interface ILibrary extends Remote {
 // Customers
 
     List<CustomerDTO> getAllCustomers() throws RemoteException;
+
+    List<CustomerDTO> findCustomers(String text) throws RemoteException;
 }
