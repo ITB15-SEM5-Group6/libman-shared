@@ -35,4 +35,8 @@ public interface ILibrary extends Remote {
 // Physical Media
 
     List<PhysicalMediaDTO> getPhysicalMedia(MediaDTO media) throws RemoteException;
+
+// Customers
+
+    List<CustomerDTO> getAllCustomers() throws RemoteException;
 }
