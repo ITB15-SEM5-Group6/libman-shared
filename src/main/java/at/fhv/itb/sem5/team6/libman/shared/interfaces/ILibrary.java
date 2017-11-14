@@ -12,33 +12,48 @@ import java.util.List;
 
 public interface ILibrary extends Remote {
 
-// Search
-    List<MediaDTO> findAllMedia(String text, Genre genre, MediaType type, Availability availability) throws RemoteException;
+    // Search Medias
+    List<MediaDTO> findMedias() throws RemoteException;
 
-    List<PhysicalMediaDTO> findAllPhysicalMedia() throws RemoteException;
+    List<MediaDTO> findMedias(@NotNull String text, @NotNull Genre genre, @NotNull MediaType type, @NotNull Availability availability) throws RemoteException;
 
-// Reservation
+    // Search Customers
+    List<CustomerDTO> findCustomers() throws RemoteException;
 
-    ReservationDTO reserveMedia(@NotNull MediaDTO media, @NotNull CustomerDTO customer) throws RemoteException;
+    List<CustomerDTO> findCustomers(@NotNull String text) throws RemoteException;
+
+    // Search PhysicalMedias
+    List<PhysicalMediaDTO> findPhysicalMedias() throws RemoteException;
+
+    List<PhysicalMediaDTO> findPhysicalMedias(@NotNull MediaDTO media) throws RemoteException;
+
+    // Search Reservations
+    List<ReservationDTO> findReservations() throws RemoteException;
+
+    List<ReservationDTO> findReservations(@NotNull MediaDTO media) throws RemoteException;
+
+    List<ReservationDTO> findReservations(@NotNull CustomerDTO customer) throws RemoteException;
+
+    List<ReservationDTO> findReservations(@NotNull MediaDTO media, @NotNull CustomerDTO customer) throws RemoteException;
+
+    // Search Lendings
+    List<LendingDTO> findLendings() throws RemoteException;
+
+    List<LendingDTO> findLendings(@NotNull PhysicalMediaDTO physicalMedia) throws RemoteException;
+
+    List<LendingDTO> findLendings(@NotNull CustomerDTO customer) throws RemoteException;
+
+    List<LendingDTO> findLendings(@NotNull PhysicalMediaDTO physicalMedia, @NotNull CustomerDTO customer) throws RemoteException;
+
+    // Reservation
+    ReservationDTO reserve(@NotNull MediaDTO media, @NotNull CustomerDTO customer) throws RemoteException;
 
     void cancelReservation(@NotNull ReservationDTO reservation) throws RemoteException;
 
-// Lending
+    // Lending
+    LendingDTO lend(@NotNull PhysicalMediaDTO physicalMedia, @NotNull CustomerDTO customer) throws RemoteException;
 
-    LendingDTO lendPhysicalMedia(@NotNull PhysicalMediaDTO physicalMedia, @NotNull CustomerDTO customer) throws RemoteException;
+    void returnLending(@NotNull LendingDTO lending) throws RemoteException;
 
-    void returnPhysicalMedia(@NotNull PhysicalMediaDTO physicalMedia) throws RemoteException;
-
-    void extendLending(@NotNull LendingDTO lending) throws RemoteException;
-
-
-// Physical Media
-
-    List<PhysicalMediaDTO> getPhysicalMedia(MediaDTO media) throws RemoteException;
-
-// Customers
-
-    List<CustomerDTO> getAllCustomers() throws RemoteException;
-
-    List<CustomerDTO> findCustomers(String text) throws RemoteException;
+    LendingDTO extendLending(@NotNull LendingDTO lending) throws RemoteException;
 }
