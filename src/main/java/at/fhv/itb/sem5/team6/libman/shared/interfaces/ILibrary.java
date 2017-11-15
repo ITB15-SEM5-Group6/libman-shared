@@ -3,6 +3,7 @@ package at.fhv.itb.sem5.team6.libman.shared.interfaces;
 import at.fhv.itb.sem5.team6.libman.shared.DTOs.*;
 import at.fhv.itb.sem5.team6.libman.shared.enums.Availability;
 import at.fhv.itb.sem5.team6.libman.shared.enums.Genre;
+import at.fhv.itb.sem5.team6.libman.shared.enums.LendingState;
 import at.fhv.itb.sem5.team6.libman.shared.enums.MediaType;
 
 import javax.validation.constraints.NotNull;
@@ -25,35 +26,43 @@ public interface ILibrary extends Remote {
     // Search PhysicalMedias
     List<PhysicalMediaDTO> findPhysicalMedias() throws RemoteException;
 
-    List<PhysicalMediaDTO> findPhysicalMedias(@NotNull MediaDTO media) throws RemoteException;
+    List<PhysicalMediaDTO> findPhysicalMediasByMedia(@NotNull String mediaId) throws RemoteException;
 
     // Search Reservations
     List<ReservationDTO> findReservations() throws RemoteException;
 
-    List<ReservationDTO> findReservations(@NotNull MediaDTO media) throws RemoteException;
+    List<ReservationDTO> findReservationsByMedia(@NotNull String mediaId) throws RemoteException;
 
-    List<ReservationDTO> findReservations(@NotNull CustomerDTO customer) throws RemoteException;
+    List<ReservationDTO> findReservationsByCustomer(@NotNull String customerId) throws RemoteException;
 
-    List<ReservationDTO> findReservations(@NotNull MediaDTO media, @NotNull CustomerDTO customer) throws RemoteException;
+    List<ReservationDTO> findReservationsByMediaAndCustomer(@NotNull String mediaId, @NotNull String customerId) throws RemoteException;
 
     // Search Lendings
     List<LendingDTO> findLendings() throws RemoteException;
 
-    List<LendingDTO> findLendings(@NotNull PhysicalMediaDTO physicalMedia) throws RemoteException;
+    List<LendingDTO> findLendings(@NotNull LendingState state) throws RemoteException;
 
-    List<LendingDTO> findLendings(@NotNull CustomerDTO customer) throws RemoteException;
+    List<LendingDTO> findLendingsByPhysicalMedia(@NotNull String physicalMediaId) throws RemoteException;
 
-    List<LendingDTO> findLendings(@NotNull PhysicalMediaDTO physicalMedia, @NotNull CustomerDTO customer) throws RemoteException;
+    List<LendingDTO> findLendingsByPhysicalMedia(@NotNull String physicalMediaId, LendingState state) throws RemoteException;
+
+    List<LendingDTO> findLendingsByCustomer(@NotNull String customerId) throws RemoteException;
+
+    List<LendingDTO> findLendingsByCustomer(@NotNull String customerId, LendingState state) throws RemoteException;
+
+    List<LendingDTO> findLendingsByPhysicalMediaAndCustomer(@NotNull String physicalMediaId, @NotNull String customerId) throws RemoteException;
+
+    List<LendingDTO> findLendingsByPhysicalMediaAndCustomer(@NotNull String physicalMediaId, @NotNull String customerId, LendingState state) throws RemoteException;
 
     // Reservation
-    ReservationDTO reserve(@NotNull MediaDTO media, @NotNull CustomerDTO customer) throws RemoteException;
+    ReservationDTO reserve(@NotNull String mediaId, @NotNull String customerId) throws RemoteException;
 
-    void cancelReservation(@NotNull ReservationDTO reservation) throws RemoteException;
+    void cancelReservation(@NotNull String reservationId) throws RemoteException;
 
     // Lending
-    LendingDTO lend(@NotNull PhysicalMediaDTO physicalMedia, @NotNull CustomerDTO customer) throws RemoteException;
+    LendingDTO lend(@NotNull String physicalMediaId, @NotNull String customerId) throws RemoteException;
 
-    void returnLending(@NotNull LendingDTO lending) throws RemoteException;
+    void returnLending(@NotNull String lendingId) throws RemoteException;
 
-    LendingDTO extendLending(@NotNull LendingDTO lending) throws RemoteException;
+    LendingDTO extendLending(@NotNull String lendingId) throws RemoteException;
 }
