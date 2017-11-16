@@ -4,5 +4,6 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 
 public interface ILibraryFactory extends Remote {
-    ILibrary create() throws RemoteException;
+
+    ILibrary create(String username, String password) throws RemoteException;
 }

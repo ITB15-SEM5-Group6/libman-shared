@@ -5,6 +5,7 @@ import at.fhv.itb.sem5.team6.libman.shared.enums.Availability;
 import at.fhv.itb.sem5.team6.libman.shared.enums.Genre;
 import at.fhv.itb.sem5.team6.libman.shared.enums.LendingState;
 import at.fhv.itb.sem5.team6.libman.shared.enums.MediaType;
+import at.fhv.itb.sem5.team6.libman.shared.enums.UserRole;
 
 import javax.validation.constraints.NotNull;
 import java.rmi.Remote;
@@ -12,6 +13,9 @@ import java.rmi.RemoteException;
 import java.util.List;
 
 public interface ILibrary extends Remote {
+
+    // User Role
+    UserRole getUserRole() throws RemoteException;
 
     // Search Medias
     List<MediaDTO> findMedias() throws RemoteException;
