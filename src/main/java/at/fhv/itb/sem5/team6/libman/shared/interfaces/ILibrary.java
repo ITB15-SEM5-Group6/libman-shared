@@ -1,11 +1,7 @@
 package at.fhv.itb.sem5.team6.libman.shared.interfaces;
 
 import at.fhv.itb.sem5.team6.libman.shared.DTOs.*;
-import at.fhv.itb.sem5.team6.libman.shared.enums.Availability;
-import at.fhv.itb.sem5.team6.libman.shared.enums.Genre;
-import at.fhv.itb.sem5.team6.libman.shared.enums.LendingState;
-import at.fhv.itb.sem5.team6.libman.shared.enums.MediaType;
-import at.fhv.itb.sem5.team6.libman.shared.enums.UserRole;
+import at.fhv.itb.sem5.team6.libman.shared.enums.*;
 
 import javax.validation.constraints.NotNull;
 import java.rmi.Remote;
@@ -13,6 +9,12 @@ import java.rmi.RemoteException;
 import java.util.List;
 
 public interface ILibrary extends Remote {
+
+    // get number of available medias
+    int getNumberOfAvailableMedias(@NotNull String mediaId) throws RemoteException;
+
+    // Da Rulez
+    int getMaxExtensions() throws RemoteException;
 
     // User Role
     UserRole getUserRole() throws RemoteException;
@@ -59,6 +61,8 @@ public interface ILibrary extends Remote {
     List<LendingDTO> findLendingsByPhysicalMediaAndCustomer(@NotNull String physicalMediaId, @NotNull String customerId, LendingState state) throws RemoteException;
 
     // Reservation
+    boolean isLendPossible(@NotNull String reservationId) throws RemoteException;
+
     ReservationDTO reserve(@NotNull String mediaId, @NotNull String customerId) throws RemoteException;
 
     void cancelReservation(@NotNull String reservationId) throws RemoteException;
