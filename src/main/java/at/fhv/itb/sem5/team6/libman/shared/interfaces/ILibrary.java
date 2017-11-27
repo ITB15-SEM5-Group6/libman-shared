@@ -10,6 +10,9 @@ import java.util.List;
 
 public interface ILibrary extends Remote {
 
+    // getNextMessage JMS
+    String getNextMessage() throws RemoteException;
+
     // get number of available medias
     int getNumberOfAvailableMedias(@NotNull String mediaId) throws RemoteException;
 
